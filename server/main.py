@@ -28,7 +28,7 @@ class PizzeriaService(PizzeriaServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     add_PizzeriaServicer_to_server(PizzeriaService(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:8080')
     print("The server is running!")
     server.start()
     server.wait_for_termination()
