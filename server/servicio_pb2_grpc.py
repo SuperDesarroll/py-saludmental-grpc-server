@@ -14,28 +14,28 @@ class PizzeriaStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.RegistrarOrden = channel.unary_unary(
-                '/Pizzeria/RegistrarOrden',
-                request_serializer=servicio__pb2.Orden.SerializeToString,
-                response_deserializer=servicio__pb2.ConfirmacionOrden.FromString,
+        self.IsReady = channel.unary_unary(
+                '/Pizzeria/IsReady',
+                request_serializer=servicio__pb2.Empty.SerializeToString,
+                response_deserializer=servicio__pb2.Empty.FromString,
                 )
-        self.Listo = channel.unary_unary(
-                '/Pizzeria/Listo',
-                request_serializer=servicio__pb2.nulo.SerializeToString,
-                response_deserializer=servicio__pb2.nulo.FromString,
+        self.RegisterOrder = channel.unary_unary(
+                '/Pizzeria/RegisterOrder',
+                request_serializer=servicio__pb2.Order.SerializeToString,
+                response_deserializer=servicio__pb2.OrderConfirmation.FromString,
                 )
 
 
 class PizzeriaServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def RegistrarOrden(self, request, context):
+    def IsReady(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Listo(self, request, context):
+    def RegisterOrder(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -44,15 +44,15 @@ class PizzeriaServicer(object):
 
 def add_PizzeriaServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'RegistrarOrden': grpc.unary_unary_rpc_method_handler(
-                    servicer.RegistrarOrden,
-                    request_deserializer=servicio__pb2.Orden.FromString,
-                    response_serializer=servicio__pb2.ConfirmacionOrden.SerializeToString,
+            'IsReady': grpc.unary_unary_rpc_method_handler(
+                    servicer.IsReady,
+                    request_deserializer=servicio__pb2.Empty.FromString,
+                    response_serializer=servicio__pb2.Empty.SerializeToString,
             ),
-            'Listo': grpc.unary_unary_rpc_method_handler(
-                    servicer.Listo,
-                    request_deserializer=servicio__pb2.nulo.FromString,
-                    response_serializer=servicio__pb2.nulo.SerializeToString,
+            'RegisterOrder': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterOrder,
+                    request_deserializer=servicio__pb2.Order.FromString,
+                    response_serializer=servicio__pb2.OrderConfirmation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -65,7 +65,7 @@ class Pizzeria(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def RegistrarOrden(request,
+    def IsReady(request,
             target,
             options=(),
             channel_credentials=None,
@@ -75,14 +75,14 @@ class Pizzeria(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Pizzeria/RegistrarOrden',
-            servicio__pb2.Orden.SerializeToString,
-            servicio__pb2.ConfirmacionOrden.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Pizzeria/IsReady',
+            servicio__pb2.Empty.SerializeToString,
+            servicio__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Listo(request,
+    def RegisterOrder(request,
             target,
             options=(),
             channel_credentials=None,
@@ -92,8 +92,8 @@ class Pizzeria(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Pizzeria/Listo',
-            servicio__pb2.nulo.SerializeToString,
-            servicio__pb2.nulo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Pizzeria/RegisterOrder',
+            servicio__pb2.Order.SerializeToString,
+            servicio__pb2.OrderConfirmation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

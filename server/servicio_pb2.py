@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eservicio.proto\"+\n\x05Pizza\x12\x10\n\x08toppings\x18\x01 \x03(\t\x12\x10\n\x08pulgadas\x18\x02 \x01(\x05\"2\n\x05Orden\x12\x16\n\x06pizzas\x18\x01 \x03(\x0b\x32\x06.Pizza\x12\x11\n\tdireccion\x18\x02 \x01(\t\"-\n\x11\x43onfirmacionOrden\x12\x18\n\x10\x65ntrega_estimada\x18\x01 \x01(\t\"\x06\n\x04nulo2O\n\x08Pizzeria\x12,\n\x0eRegistrarOrden\x12\x06.Orden\x1a\x12.ConfirmacionOrden\x12\x15\n\x05Listo\x12\x05.nulo\x1a\x05.nulob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eservicio.proto\"9\n\x05Pizza\x12\x10\n\x08toppings\x18\x01 \x03(\t\x12\x0e\n\x06inches\x18\x02 \x01(\x05\x12\x0e\n\x06\x63heese\x18\x03 \x01(\x08\"G\n\x05Order\x12\x16\n\x06pizzas\x18\x01 \x03(\x0b\x32\x06.Pizza\x12\x15\n\rcustomer_name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"/\n\x11OrderConfirmation\x12\x1a\n\x12\x65stimated_delivery\x18\x01 \x01(\x03\"\x07\n\x05\x45mpty2V\n\x08Pizzeria\x12\x1b\n\x07IsReady\x12\x06.Empty\x1a\x06.Empty\"\x00\x12-\n\rRegisterOrder\x12\x06.Order\x1a\x12.OrderConfirmation\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'servicio_pb2', globals())
@@ -21,13 +21,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _PIZZA._serialized_start=18
-  _PIZZA._serialized_end=61
-  _ORDEN._serialized_start=63
-  _ORDEN._serialized_end=113
-  _CONFIRMACIONORDEN._serialized_start=115
-  _CONFIRMACIONORDEN._serialized_end=160
-  _NULO._serialized_start=162
-  _NULO._serialized_end=168
-  _PIZZERIA._serialized_start=170
-  _PIZZERIA._serialized_end=249
+  _PIZZA._serialized_end=75
+  _ORDER._serialized_start=77
+  _ORDER._serialized_end=148
+  _ORDERCONFIRMATION._serialized_start=150
+  _ORDERCONFIRMATION._serialized_end=197
+  _EMPTY._serialized_start=199
+  _EMPTY._serialized_end=206
+  _PIZZERIA._serialized_start=208
+  _PIZZERIA._serialized_end=294
 # @@protoc_insertion_point(module_scope)

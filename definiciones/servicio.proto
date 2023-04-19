@@ -1,21 +1,25 @@
-syntax ="proto3";
+syntax = "proto3";
 
 message Pizza {
     repeated string toppings = 1;
-    int32 pulgadas = 2;    
+    int32 inches = 2;
+    bool cheese = 3;
 }
 
-message Orden{
+message Order {
     repeated Pizza pizzas = 1;
-    string direccion = 2;
-}
-message ConfirmacionOrden{
-    string entrega_estimada = 1;
+    string customer_name = 2;
+    string address = 3;
 }
 
-message nulo{}
+message OrderConfirmation {
+    int64 estimated_delivery = 1;
+}
 
-service Pizzeria{
-    rpc RegistrarOrden(Orden) returns (ConfirmacionOrden);
-    rpc Listo(nulo) returns (nulo);
+message Empty {
+}
+
+service Pizzeria {
+    rpc IsReady(Empty) returns (Empty) {}
+    rpc RegisterOrder(Order) returns (OrderConfirmation) {}
 }
