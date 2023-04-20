@@ -17,8 +17,18 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("https://localhost:50051"));
+  ).Execute(() => GetClient("http://127.0.0.1:50051"));
 
+Encuesta encuesta = new Encuesta()
+{
+    DesinteresDiversion = 1,
+    Fracasado = 1,
+    Irritado = 1
+};
+EncuestaConfirmation encuestaConfirmation = client.RegisterEncuesta(encuesta);
+Console.WriteLine($"Encuesta Predicción: {encuestaConfirmation.Prediccion}");
+
+/*
 while (true)
 {
     var customer = Customer.Customers[random.Next(Customer.Customers.Length)];
@@ -45,11 +55,13 @@ while (true)
         order.Pizzas.Add(pizza);
     }
 
+
     var confirmation = client.RegisterOrder(order);
     Console.WriteLine($"Your order will arrive at: {ToDateString(confirmation.EstimatedDelivery)}");
     Thread.Sleep(1000 * random.Next(1, 4));
-}
 
+}
+*/
 
 static Pizzeria.PizzeriaClient GetClient(string address)
 {
