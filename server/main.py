@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 
 import grpc
 
+from mlsaludmental import MlDetection
 from servicio_pb2 import OrderConfirmation
 from servicio_pb2 import EncuestaConfirmation
 from servicio_pb2_grpc import PizzeriaServicer, add_PizzeriaServicer_to_server
@@ -14,6 +15,8 @@ class PizzeriaService(PizzeriaServicer):
 
     def RegisterEncuesta(self, request, context):
         print(request.desinteres_diversion)
+        mlObj = MlDetection()
+        respuesta = mlObj.cargar()
         return EncuestaConfirmation(prediccion=1)
 
     def RegisterOrder(self, request, context):
