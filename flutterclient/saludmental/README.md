@@ -53,3 +53,6 @@ Asegúrate de reemplazar <output_directory> con el directorio donde quieres que 
 
 
 protoc --proto_path=. --dart_out=. servicio.proto      
+
+
+protoc --proto_path=protos  --dart_out=grpc:generated -Iprotos servicio.proto

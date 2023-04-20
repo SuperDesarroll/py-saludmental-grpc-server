@@ -17,12 +17,12 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("http://localhost:50051"));
+  ).Execute(() => GetClient("http://mypython.koreasouth.cloudapp.azure.com:50051"));
 
 Encuesta encuesta = new Encuesta()
 {
     DesinteresDiversion = 1,
-    Fracasado = 3,
+    Fracasado = 1,
     Irritado = 1
 };
 EncuestaConfirmation encuestaConfirmation = client.RegisterEncuesta(encuesta);

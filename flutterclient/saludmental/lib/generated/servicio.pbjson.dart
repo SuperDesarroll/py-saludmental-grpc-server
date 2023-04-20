@@ -8,40 +8,6 @@
 import 'dart:core' as $core;
 import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
-@$core.Deprecated('Use pizzaDescriptor instead')
-const Pizza$json = const {
-  '1': 'Pizza',
-  '2': const [
-    const {'1': 'toppings', '3': 1, '4': 3, '5': 9, '10': 'toppings'},
-    const {'1': 'inches', '3': 2, '4': 1, '5': 5, '10': 'inches'},
-    const {'1': 'cheese', '3': 3, '4': 1, '5': 8, '10': 'cheese'},
-  ],
-};
-
-/// Descriptor for `Pizza`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List pizzaDescriptor = $convert.base64Decode('CgVQaXp6YRIaCgh0b3BwaW5ncxgBIAMoCVIIdG9wcGluZ3MSFgoGaW5jaGVzGAIgASgFUgZpbmNoZXMSFgoGY2hlZXNlGAMgASgIUgZjaGVlc2U=');
-@$core.Deprecated('Use orderDescriptor instead')
-const Order$json = const {
-  '1': 'Order',
-  '2': const [
-    const {'1': 'pizzas', '3': 1, '4': 3, '5': 11, '6': '.Pizza', '10': 'pizzas'},
-    const {'1': 'customer_name', '3': 2, '4': 1, '5': 9, '10': 'customerName'},
-    const {'1': 'address', '3': 3, '4': 1, '5': 9, '10': 'address'},
-  ],
-};
-
-/// Descriptor for `Order`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orderDescriptor = $convert.base64Decode('CgVPcmRlchIeCgZwaXp6YXMYASADKAsyBi5QaXp6YVIGcGl6emFzEiMKDWN1c3RvbWVyX25hbWUYAiABKAlSDGN1c3RvbWVyTmFtZRIYCgdhZGRyZXNzGAMgASgJUgdhZGRyZXNz');
-@$core.Deprecated('Use orderConfirmationDescriptor instead')
-const OrderConfirmation$json = const {
-  '1': 'OrderConfirmation',
-  '2': const [
-    const {'1': 'estimated_delivery', '3': 1, '4': 1, '5': 3, '10': 'estimatedDelivery'},
-  ],
-};
-
-/// Descriptor for `OrderConfirmation`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List orderConfirmationDescriptor = $convert.base64Decode('ChFPcmRlckNvbmZpcm1hdGlvbhItChJlc3RpbWF0ZWRfZGVsaXZlcnkYASABKANSEWVzdGltYXRlZERlbGl2ZXJ5');
 @$core.Deprecated('Use encuestaDescriptor instead')
 const Encuesta$json = const {
   '1': 'Encuesta',
