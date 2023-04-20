@@ -24,6 +24,11 @@ class PizzeriaStub(object):
                 request_serializer=servicio__pb2.Order.SerializeToString,
                 response_deserializer=servicio__pb2.OrderConfirmation.FromString,
                 )
+        self.RegisterEncuesta = channel.unary_unary(
+                '/Pizzeria/RegisterEncuesta',
+                request_serializer=servicio__pb2.Encuesta.SerializeToString,
+                response_deserializer=servicio__pb2.EncuestaConfirmation.FromString,
+                )
 
 
 class PizzeriaServicer(object):
@@ -41,6 +46,12 @@ class PizzeriaServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RegisterEncuesta(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PizzeriaServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -53,6 +64,11 @@ def add_PizzeriaServicer_to_server(servicer, server):
                     servicer.RegisterOrder,
                     request_deserializer=servicio__pb2.Order.FromString,
                     response_serializer=servicio__pb2.OrderConfirmation.SerializeToString,
+            ),
+            'RegisterEncuesta': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterEncuesta,
+                    request_deserializer=servicio__pb2.Encuesta.FromString,
+                    response_serializer=servicio__pb2.EncuestaConfirmation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,5 +111,22 @@ class Pizzeria(object):
         return grpc.experimental.unary_unary(request, target, '/Pizzeria/RegisterOrder',
             servicio__pb2.Order.SerializeToString,
             servicio__pb2.OrderConfirmation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RegisterEncuesta(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/Pizzeria/RegisterEncuesta',
+            servicio__pb2.Encuesta.SerializeToString,
+            servicio__pb2.EncuestaConfirmation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -4,13 +4,17 @@ from datetime import datetime, timedelta
 import grpc
 
 from servicio_pb2 import OrderConfirmation
+from servicio_pb2 import EncuestaConfirmation
 from servicio_pb2_grpc import PizzeriaServicer, add_PizzeriaServicer_to_server
-
 
 class PizzeriaService(PizzeriaServicer):
 
     def IsReady(self, request, context):
         return request
+
+    def RegisterEncuesta(self, request, context):
+        print(request.desinteres_diversion)
+        return EncuestaConfirmation(prediccion=1)
 
     def RegisterOrder(self, request, context):
         print("New order received:")

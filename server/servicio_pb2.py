@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eservicio.proto\"9\n\x05Pizza\x12\x10\n\x08toppings\x18\x01 \x03(\t\x12\x0e\n\x06inches\x18\x02 \x01(\x05\x12\x0e\n\x06\x63heese\x18\x03 \x01(\x08\"G\n\x05Order\x12\x16\n\x06pizzas\x18\x01 \x03(\x0b\x32\x06.Pizza\x12\x15\n\rcustomer_name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"/\n\x11OrderConfirmation\x12\x1a\n\x12\x65stimated_delivery\x18\x01 \x01(\x03\"\x07\n\x05\x45mpty2V\n\x08Pizzeria\x12\x1b\n\x07IsReady\x12\x06.Empty\x1a\x06.Empty\"\x00\x12-\n\rRegisterOrder\x12\x06.Order\x1a\x12.OrderConfirmation\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0eservicio.proto\"9\n\x05Pizza\x12\x10\n\x08toppings\x18\x01 \x03(\t\x12\x0e\n\x06inches\x18\x02 \x01(\x05\x12\x0e\n\x06\x63heese\x18\x03 \x01(\x08\"G\n\x05Order\x12\x16\n\x06pizzas\x18\x01 \x03(\x0b\x32\x06.Pizza\x12\x15\n\rcustomer_name\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"/\n\x11OrderConfirmation\x12\x1a\n\x12\x65stimated_delivery\x18\x01 \x01(\x03\"M\n\x08\x45ncuesta\x12\x1c\n\x14\x64\x65sinteres_diversion\x18\x01 \x01(\x03\x12\x11\n\tfracasado\x18\x02 \x01(\x03\x12\x10\n\x08irritado\x18\x03 \x01(\x03\"*\n\x14\x45ncuestaConfirmation\x12\x12\n\nprediccion\x18\x01 \x01(\x03\"\x07\n\x05\x45mpty2\x8e\x01\n\x08Pizzeria\x12\x1b\n\x07IsReady\x12\x06.Empty\x1a\x06.Empty\"\x00\x12-\n\rRegisterOrder\x12\x06.Order\x1a\x12.OrderConfirmation\"\x00\x12\x36\n\x10RegisterEncuesta\x12\t.Encuesta\x1a\x15.EncuestaConfirmation\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'servicio_pb2', globals())
@@ -26,8 +26,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ORDER._serialized_end=148
   _ORDERCONFIRMATION._serialized_start=150
   _ORDERCONFIRMATION._serialized_end=197
-  _EMPTY._serialized_start=199
-  _EMPTY._serialized_end=206
-  _PIZZERIA._serialized_start=208
-  _PIZZERIA._serialized_end=294
+  _ENCUESTA._serialized_start=199
+  _ENCUESTA._serialized_end=276
+  _ENCUESTACONFIRMATION._serialized_start=278
+  _ENCUESTACONFIRMATION._serialized_end=320
+  _EMPTY._serialized_start=322
+  _EMPTY._serialized_end=329
+  _PIZZERIA._serialized_start=332
+  _PIZZERIA._serialized_end=474
 # @@protoc_insertion_point(module_scope)
