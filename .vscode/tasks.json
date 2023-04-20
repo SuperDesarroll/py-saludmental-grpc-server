@@ -10,7 +10,7 @@
 				"dockerfile": "${workspaceFolder}/Dockerfile",
 				"context": "${workspaceFolder}",
 				"pull": true
-			}
+			},			
 		},
 		{
 			"type": "docker-run",
@@ -18,6 +18,15 @@
 			"dependsOn": [
 				"docker-build"
 			],
+			"dockerRun": {
+				"ports": [
+					{
+						"hostPort": 50051,
+						"containerPort": 50051,
+						"protocol": "tcp"
+					}
+				],				
+			},
 			"python": {
 				"file": "server/main.py"
 			}

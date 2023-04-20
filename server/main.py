@@ -15,9 +15,15 @@ class PizzeriaService(PizzeriaServicer):
 
     def RegisterEncuesta(self, request, context):
         print(request.desinteres_diversion)
-        mlObj = MlDetection()
-        respuesta = mlObj.cargar()
-        return EncuestaConfirmation(prediccion=1)
+        a = [[            
+            request.desinteres_diversion,
+            request.fracasado,  
+            request.irritado
+        ]]
+        print("Input: {}".format(a))
+        r = self.grid_cv.predict(a)
+        print("Predice: {}".format(r))
+        return EncuestaConfirmation(prediccion=r[0])
 
     def RegisterOrder(self, request, context):
         print("New order received:")
@@ -31,10 +37,15 @@ class PizzeriaService(PizzeriaServicer):
         estimated_delivery = (datetime.now() + timedelta(minutes=30)) - datetime(1970, 1, 1)
         return OrderConfirmation(estimated_delivery=int(estimated_delivery.total_seconds()))
 
+    def iniciarML(self):
+        mlObj = MlDetection()
+        self.grid_cv  = mlObj.cargar()
 
-def serve():
+def serve():    
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    add_PizzeriaServicer_to_server(PizzeriaService(), server)
+    objPizzeria = PizzeriaService()
+    objPizzeria.iniciarML()
+    add_PizzeriaServicer_to_server(objPizzeria, server)
     server.add_insecure_port('[::]:50051')
     print("The server is running!")
     server.start()

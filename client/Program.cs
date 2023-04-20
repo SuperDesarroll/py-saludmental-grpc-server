@@ -17,13 +17,13 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("http://127.0.0.1:32803"));
+  ).Execute(() => GetClient("http://127.0.0.1:50051"));
 
 Encuesta encuesta = new Encuesta()
 {
-    DesinteresDiversion = 0,
-    Fracasado = 0,
-    Irritado = 0
+    DesinteresDiversion = 1,
+    Fracasado = 1,
+    Irritado = 1
 };
 EncuestaConfirmation encuestaConfirmation = client.RegisterEncuesta(encuesta);
 Console.WriteLine($"Encuesta Predicción: {encuestaConfirmation.Prediccion}");
