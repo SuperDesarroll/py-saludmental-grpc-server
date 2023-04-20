@@ -29,7 +29,7 @@ message EncuestaConfirmation {
 message Empty {
 }
 
-service Pizzeria {
+service SaludMental {
     rpc IsReady(Empty) returns (Empty) {}
     rpc RegisterOrder(Order) returns (OrderConfirmation) {}
     rpc RegisterEncuesta(Encuesta) returns (EncuestaConfirmation) {}

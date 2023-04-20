@@ -17,26 +17,26 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("https://saludmental.cleverapps.io:50051"));
+  ).Execute(() => GetClient("http://localhost:50051"));
 
 Encuesta encuesta = new Encuesta()
 {
     DesinteresDiversion = 1,
-    Fracasado = 1,
+    Fracasado = 3,
     Irritado = 1
 };
 EncuestaConfirmation encuestaConfirmation = client.RegisterEncuesta(encuesta);
 Console.WriteLine($"Encuesta Predicción: {encuestaConfirmation.Prediccion}");
 
 
-static Pizzeria.PizzeriaClient GetClient(string address)
+static SaludMental.SaludMentalClient GetClient(string address)
 {
     // This switch must be set before creating the GrpcChannel/HttpClient.
     AppContext.SetSwitch(
         "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
     var channel = GrpcChannel.ForAddress(address);
-    var client = new Pizzeria.PizzeriaClient(channel);
+    var client = new SaludMental.SaludMentalClient(channel);
     client.IsReady(new Empty());
     return client;
 }

@@ -141,7 +141,7 @@ class _PreguntasPageState extends State<PreguntasPage> {
 
   String predice = "-";
 
-  late PizzeriaClient stub;
+  late SaludMentalClient stub;
 
   Future<void> sendRequest() async {
     setState(() {
@@ -152,7 +152,7 @@ class _PreguntasPageState extends State<PreguntasPage> {
         options:
             const ChannelOptions(credentials: ChannelCredentials.insecure()));
 
-    stub = PizzeriaClient(channel,
+    stub = SaludMentalClient(channel,
         options: CallOptions(timeout: const Duration(seconds: 30)));
 
     try {
@@ -226,7 +226,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String predice = "";
 
-  late PizzeriaClient stub;
+  late SaludMentalClient stub;
 
   Future<void> sendRequest() async {
     final channel = ClientChannel('mypython.koreasouth.cloudapp.azure.com',
@@ -234,7 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
         options:
             const ChannelOptions(credentials: ChannelCredentials.insecure()));
 
-    stub = PizzeriaClient(channel,
+    stub = SaludMentalClient(channel,
         options: CallOptions(timeout: const Duration(seconds: 30)));
 
     try {

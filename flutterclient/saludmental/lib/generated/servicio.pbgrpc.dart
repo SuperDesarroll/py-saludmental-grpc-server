@@ -13,25 +13,25 @@ import 'package:grpc/service_api.dart' as $grpc;
 import 'servicio.pb.dart' as $0;
 export 'servicio.pb.dart';
 
-class PizzeriaClient extends $grpc.Client {
+class SaludMentalClient extends $grpc.Client {
   static final _$isReady = $grpc.ClientMethod<$0.Empty, $0.Empty>(
-      '/Pizzeria/IsReady',
+      '/SaludMental/IsReady',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
   static final _$registerOrder =
       $grpc.ClientMethod<$0.Order, $0.OrderConfirmation>(
-          '/Pizzeria/RegisterOrder',
+          '/SaludMental/RegisterOrder',
           ($0.Order value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.OrderConfirmation.fromBuffer(value));
   static final _$registerEncuesta =
       $grpc.ClientMethod<$0.Encuesta, $0.EncuestaConfirmation>(
-          '/Pizzeria/RegisterEncuesta',
+          '/SaludMental/RegisterEncuesta',
           ($0.Encuesta value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.EncuestaConfirmation.fromBuffer(value));
 
-  PizzeriaClient($grpc.ClientChannel channel,
+  SaludMentalClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
       $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
@@ -53,10 +53,10 @@ class PizzeriaClient extends $grpc.Client {
   }
 }
 
-abstract class PizzeriaServiceBase extends $grpc.Service {
-  $core.String get $name => 'Pizzeria';
+abstract class SaludMentalServiceBase extends $grpc.Service {
+  $core.String get $name => 'SaludMental';
 
-  PizzeriaServiceBase() {
+  SaludMentalServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Empty, $0.Empty>(
         'IsReady',
         isReady_Pre,
