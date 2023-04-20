@@ -17,7 +17,7 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("https://localhost:50051"));
+  ).Execute(() => GetClient("http://localhost:50051"));
 
 while (true)
 {
