@@ -28,8 +28,13 @@ class PizzeriaService(PizzeriaServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     add_PizzeriaServicer_to_server(PizzeriaService(), server)
-    server.add_insecure_port('[::]:50051')
-    print("The server is running!")
+    with open('server.crt', 'rb') as f:
+        certificate = f.read()
+    with open('server.key', 'rb') as f:
+        private_key = f.read()
+    credentials = grpc.ssl_server_credentials([(private_key, certificate)])
+    server.add_secure_port('[::]:50051', credentials)
+    print("The server is running securely with HTTPS!")
     server.start()
     server.wait_for_termination()
 
