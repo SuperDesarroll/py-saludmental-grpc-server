@@ -17,7 +17,7 @@ var client = Policy
     {
         Console.WriteLine($"Server not available yet!");
     }
-  ).Execute(() => GetClient("http://127.0.0.1:50051"));
+  ).Execute(() => GetClient("https://saludmental.cleverapps.io:50051"));
 
 Encuesta encuesta = new Encuesta()
 {
@@ -28,40 +28,6 @@ Encuesta encuesta = new Encuesta()
 EncuestaConfirmation encuestaConfirmation = client.RegisterEncuesta(encuesta);
 Console.WriteLine($"Encuesta Predicción: {encuestaConfirmation.Prediccion}");
 
-/*
-while (true)
-{
-    var customer = Customer.Customers[random.Next(Customer.Customers.Length)];
-    var order = new Order
-    {
-        Address = customer.Address,
-        CustomerName = customer.CustomerName,
-    };
-
-
-    var numberOfPizzas = random.Next(1, 5);
-    for (int idx = 0; idx < numberOfPizzas; idx++)
-    {
-        var pizza = new Pizza
-        {
-            Cheese = random.Next(10) % 2 == 0,
-            Inches = random.Next(10, 21)
-        };
-
-        foreach (string topping in Toppings.Select(10))
-        {
-            pizza.Toppings.Add(topping);
-        }
-        order.Pizzas.Add(pizza);
-    }
-
-
-    var confirmation = client.RegisterOrder(order);
-    Console.WriteLine($"Your order will arrive at: {ToDateString(confirmation.EstimatedDelivery)}");
-    Thread.Sleep(1000 * random.Next(1, 4));
-
-}
-*/
 
 static Pizzeria.PizzeriaClient GetClient(string address)
 {
