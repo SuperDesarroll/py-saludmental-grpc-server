@@ -16,6 +16,6 @@ Proyectos de Inteligencia Artificial Aplicando Ingeniería de Software
 	ubicado en la carpeta servidor, desarrollado en python
 	
 - **Clientes**
-	Ubicados en la carpeta clientes desarrollados en flutter y Net6
+	Ubicados en la carpeta clientes desarrollados en flutter y Net7
 
 **Nota**: leer los readme de cada proyecto para su ejecución
