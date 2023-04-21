@@ -7,9 +7,9 @@
 
 using grpc = global::Grpc.Core;
 
-public static partial class Pizzeria
+public static partial class SaludMental
 {
-  static readonly string __ServiceName = "Pizzeria";
+  static readonly string __ServiceName = "SaludMental";
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -47,10 +47,6 @@ public static partial class Pizzeria
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::Empty> __Marshaller_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Empty.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::Order> __Marshaller_Order = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Order.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::OrderConfirmation> __Marshaller_OrderConfirmation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::OrderConfirmation.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::Encuesta> __Marshaller_Encuesta = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Encuesta.Parser));
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Marshaller<global::EncuestaConfirmation> __Marshaller_EncuestaConfirmation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::EncuestaConfirmation.Parser));
@@ -62,14 +58,6 @@ public static partial class Pizzeria
       "IsReady",
       __Marshaller_Empty,
       __Marshaller_Empty);
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::Order, global::OrderConfirmation> __Method_RegisterOrder = new grpc::Method<global::Order, global::OrderConfirmation>(
-      grpc::MethodType.Unary,
-      __ServiceName,
-      "RegisterOrder",
-      __Marshaller_Order,
-      __Marshaller_OrderConfirmation);
 
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
   static readonly grpc::Method<global::Encuesta, global::EncuestaConfirmation> __Method_RegisterEncuesta = new grpc::Method<global::Encuesta, global::EncuestaConfirmation>(
@@ -85,18 +73,12 @@ public static partial class Pizzeria
     get { return global::ServicioReflection.Descriptor.Services[0]; }
   }
 
-  /// <summary>Base class for server-side implementations of Pizzeria</summary>
-  [grpc::BindServiceMethod(typeof(Pizzeria), "BindService")]
-  public abstract partial class PizzeriaBase
+  /// <summary>Base class for server-side implementations of SaludMental</summary>
+  [grpc::BindServiceMethod(typeof(SaludMental), "BindService")]
+  public abstract partial class SaludMentalBase
   {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::System.Threading.Tasks.Task<global::Empty> IsReady(global::Empty request, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task<global::OrderConfirmation> RegisterOrder(global::Order request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -109,30 +91,30 @@ public static partial class Pizzeria
 
   }
 
-  /// <summary>Client for Pizzeria</summary>
-  public partial class PizzeriaClient : grpc::ClientBase<PizzeriaClient>
+  /// <summary>Client for SaludMental</summary>
+  public partial class SaludMentalClient : grpc::ClientBase<SaludMentalClient>
   {
-    /// <summary>Creates a new client for Pizzeria</summary>
+    /// <summary>Creates a new client for SaludMental</summary>
     /// <param name="channel">The channel to use to make remote calls.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public PizzeriaClient(grpc::ChannelBase channel) : base(channel)
+    public SaludMentalClient(grpc::ChannelBase channel) : base(channel)
     {
     }
-    /// <summary>Creates a new client for Pizzeria that uses a custom <c>CallInvoker</c>.</summary>
+    /// <summary>Creates a new client for SaludMental that uses a custom <c>CallInvoker</c>.</summary>
     /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public PizzeriaClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+    public SaludMentalClient(grpc::CallInvoker callInvoker) : base(callInvoker)
     {
     }
     /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected PizzeriaClient() : base()
+    protected SaludMentalClient() : base()
     {
     }
     /// <summary>Protected constructor to allow creation of configured clients.</summary>
     /// <param name="configuration">The client configuration.</param>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected PizzeriaClient(ClientBaseConfiguration configuration) : base(configuration)
+    protected SaludMentalClient(ClientBaseConfiguration configuration) : base(configuration)
     {
     }
 
@@ -157,26 +139,6 @@ public static partial class Pizzeria
       return CallInvoker.AsyncUnaryCall(__Method_IsReady, null, options, request);
     }
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::OrderConfirmation RegisterOrder(global::Order request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return RegisterOrder(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::OrderConfirmation RegisterOrder(global::Order request, grpc::CallOptions options)
-    {
-      return CallInvoker.BlockingUnaryCall(__Method_RegisterOrder, null, options, request);
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::OrderConfirmation> RegisterOrderAsync(global::Order request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return RegisterOrderAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncUnaryCall<global::OrderConfirmation> RegisterOrderAsync(global::Order request, grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncUnaryCall(__Method_RegisterOrder, null, options, request);
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public virtual global::EncuestaConfirmation RegisterEncuesta(global::Encuesta request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return RegisterEncuesta(request, new grpc::CallOptions(headers, deadline, cancellationToken));
@@ -198,20 +160,19 @@ public static partial class Pizzeria
     }
     /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected override PizzeriaClient NewInstance(ClientBaseConfiguration configuration)
+    protected override SaludMentalClient NewInstance(ClientBaseConfiguration configuration)
     {
-      return new PizzeriaClient(configuration);
+      return new SaludMentalClient(configuration);
     }
   }
 
   /// <summary>Creates service definition that can be registered with a server</summary>
   /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static grpc::ServerServiceDefinition BindService(PizzeriaBase serviceImpl)
+  public static grpc::ServerServiceDefinition BindService(SaludMentalBase serviceImpl)
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
         .AddMethod(__Method_IsReady, serviceImpl.IsReady)
-        .AddMethod(__Method_RegisterOrder, serviceImpl.RegisterOrder)
         .AddMethod(__Method_RegisterEncuesta, serviceImpl.RegisterEncuesta).Build();
   }
 
@@ -220,10 +181,9 @@ public static partial class Pizzeria
   /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
   /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
   [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static void BindService(grpc::ServiceBinderBase serviceBinder, PizzeriaBase serviceImpl)
+  public static void BindService(grpc::ServiceBinderBase serviceBinder, SaludMentalBase serviceImpl)
   {
     serviceBinder.AddMethod(__Method_IsReady, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Empty, global::Empty>(serviceImpl.IsReady));
-    serviceBinder.AddMethod(__Method_RegisterOrder, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Order, global::OrderConfirmation>(serviceImpl.RegisterOrder));
     serviceBinder.AddMethod(__Method_RegisterEncuesta, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Encuesta, global::EncuestaConfirmation>(serviceImpl.RegisterEncuesta));
   }
 
