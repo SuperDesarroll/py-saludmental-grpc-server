@@ -1,0 +1,2 @@
+obj/Debug/net7.0/Servicio.cs \
+obj/Debug/net7.0/ServicioGrpc.cs: /Users/dmg/Documents/devs/github/py_saludmental_grpc_server/servidor/server/protos/servicio.proto

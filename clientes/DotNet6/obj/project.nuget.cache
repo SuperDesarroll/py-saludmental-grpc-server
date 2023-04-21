@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "fc/I6OpGNSsz6do5Q7WiSInWnF40AiYin3FEE33DH14UnJQbFYxroDtyPRiipjFJlj78yPPQjTZU7MYkeZnKfQ==",
+  "success": true,
+  "projectFilePath": "/Users/dmg/Documents/devs/github/py_saludmental_grpc_server/clientes/DotNet6/client.csproj",
+  "expectedPackageFiles": [
+    "/Users/dmg/.nuget/packages/google.api.commonprotos/2.9.0/google.api.commonprotos.2.9.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/google.protobuf/3.22.0/google.protobuf.3.22.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/grpc.core/2.46.6/grpc.core.2.46.6.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/grpc.core.api/2.52.0/grpc.core.api.2.52.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/grpc.net.client/2.52.0/grpc.net.client.2.52.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/grpc.net.common/2.52.0/grpc.net.common.2.52.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/grpc.tools/2.54.0/grpc.tools.2.54.0.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.3/microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/polly/7.2.3/polly.7.2.3.nupkg.sha512",
+    "/Users/dmg/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

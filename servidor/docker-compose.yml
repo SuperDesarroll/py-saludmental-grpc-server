@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  servidor:
+    image: servidor
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 50051:50051

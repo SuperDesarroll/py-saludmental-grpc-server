@@ -1,2 +1,0 @@
-obj/Debug/net7.0/Servicio.cs \
-obj/Debug/net7.0/ServicioGrpc.cs: ../definiciones/servicio.proto
