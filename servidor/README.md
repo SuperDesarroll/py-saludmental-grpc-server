@@ -14,3 +14,6 @@
 
 ## pruebas unitarias
 > python3 -m pytest  -p no:warnings
+
+
+![Docker Compilación y Ejecución](https://github.com/SuperDesarroll/py_saludmental_grpc_server/blob/main/servidor/server/2023-04-21-18-41-04.gif "Docker Compilación y Ejecución")
