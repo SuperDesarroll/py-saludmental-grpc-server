@@ -10,7 +10,17 @@
 
 
 ## creacion archivos protos
-python -m grpc_tools.protoc --proto_path=protos --python_out=. --grpc_python_out=. protos/servicio.proto 
+> python -m grpc_tools.protoc --proto_path=protos --python_out=. --grpc_python_out=. protos/servicio.proto 
 
 ## pruebas unitarias
-python3 -m pytest  -p no:warnings
+> python3 -m pytest  -p no:warnings
+
+
+## Proceso de compilacion y ejecución del docker
+
+![Docker Compilación y Ejecución](https://github.com/SuperDesarroll/py_saludmental_grpc_server/blob/main/servidor/server/2023-04-21-18-41-04.gif "Docker Compilación y Ejecución")
+
+
+## Proceso para ejecutar pruebas unitarias
+
+![Prueba Unitaria](https://github.com/SuperDesarroll/py_saludmental_grpc_server/blob/main/servidor/server/2023-04-21-18-50-11.gif "Prueba Unitaria")

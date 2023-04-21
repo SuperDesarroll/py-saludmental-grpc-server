@@ -28,3 +28,9 @@ Compila el archivo proto
 
 
 ![app](https://raw.githubusercontent.com/SuperDesarroll/py_saludmental_grpc_server/main/clientes/Flutter/android/videoappsaludmental.gif "app")
+
+[Descargar para Android](https://github.com/SuperDesarroll/py_saludmental_grpc_server/blob/main/clientes/Flutter/android/app-release.apk "Descargar para Android") 
+
+
+[Descargar para IOS](https://github.com/SuperDesarroll/py_saludmental_grpc_server/blob/main/clientes/Flutter/ios/saludmental.ipa "Descargar para IOS") 
+
